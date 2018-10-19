@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Article | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近看到了微信前端的一道面试题,题目是这样的:实现一个LazyMan，可以按照以下方式调用: LazyMan(“Hank”) 输出:12Hi! This is Hank!function func(p1,p2)&amp;#123;&amp;#125; LazyMan(“Hank”).sleep(10).eat(“dinner”)输出Hi! This is Hank!//等待10秒..Wake up after 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Article">
+<meta property="og:url" content="http://yoursite.com/2018/10/19/Article/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近看到了微信前端的一道面试题,题目是这样的:实现一个LazyMan，可以按照以下方式调用: LazyMan(“Hank”) 输出:12Hi! This is Hank!function func(p1,p2)&amp;#123;&amp;#125; LazyMan(“Hank”).sleep(10).eat(“dinner”)输出Hi! This is Hank!//等待10秒..Wake up after 1">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-19T01:24:09.646Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Article">
+<meta name="twitter:description" content="最近看到了微信前端的一道面试题,题目是这样的:实现一个LazyMan，可以按照以下方式调用: LazyMan(“Hank”) 输出:12Hi! This is Hank!function func(p1,p2)&amp;#123;&amp;#125; LazyMan(“Hank”).sleep(10).eat(“dinner”)输出Hi! This is Hank!//等待10秒..Wake up after 1">
+  
+    <link rel="alternate" href="/blog3/public/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog3/public/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog3/public/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog3/public/">Home</a>
+        
+          <a class="main-nav-link" href="/blog3/public/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog3/public/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="first-Article" class="article article-type-first" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog3/public/2018/10/19/Article/" class="article-date">
+  <time datetime="2018-10-19T00:46:54.000Z" itemprop="datePublished">2018-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Article
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="最近看到了微信前端的一道面试题-题目是这样的"><a href="#最近看到了微信前端的一道面试题-题目是这样的" class="headerlink" title="最近看到了微信前端的一道面试题,题目是这样的:"></a>最近看到了微信前端的一道面试题,题目是这样的:</h2><p>实现一个LazyMan，可以按照以下方式调用:</p>
+<p>LazyMan(“Hank”)</p>
+<p>输出:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hi! This is Hank!</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">p1,p2</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>LazyMan(“Hank”).sleep(10).eat(“dinner”)输出<br>Hi! This is Hank!<br>//等待10秒..<br>Wake up after 10<br>Eat dinner~</p>
+<p>LazyMan(“Hank”).eat(“dinner”).eat(“supper”)输出<br>Hi This is Hank!<br>Eat dinner~<br>Eat supper~</p>
+<p>LazyMan(“Hank”).sleepFirst(5).eat(“supper”)输出<br>//等待5秒<br>Wake up after 5<br>Hi This is Hank!<br>Eat supper</p>
+<p>以此类推。</p>
+<p>大家可以自己尝试着写一下,以下是我个人写的代码及分析:</p>
+<p>其实是一个关于js流程控制的问题:</p>
+<p>自己手写了一下,一开始觉得没什么难度,写的时候还是发现了一些问题,不过也顺带复习了一下js基本功,代码如下:</p>
+<p>function LazyMan(name){<br>　　return new _lazyman(name);<br>}</p>
+<p>function _lazyman(name) {<br>　　this.task=[];<br>　　var that=this;<br>　　var fn=(function(name){<br>　　　　return function(){<br>　　　　　　console.log(“Hello I’m “+name);<br>　　　　　　that.next();<br>　　　　}<br>　　})(name);</p>
+<p>　　this.task.push(fn);</p>
+<p>　　setTimeout(function(){that.next()},0)</p>
+<p>//此处用settimeout执行是因为settimeout会在同步线程都进行完了之后再执行,如果不用settimeout就会同步触发,事件还未都放在队列中,就已经开始执行了</p>
+<p>//关于js同步,异步,事件循环等,可以看这篇文章<a href="http://blog.csdn.net/alex8046/article/details/51914205" target="_blank" rel="noopener">http://blog.csdn.net/alex8046/article/details/51914205</a></p>
+<p>}</p>
+<p>_lazyman.prototype={<br>　　constructor:_lazyman,</p>
+<p>//next是实现函数在队列中顺序执行功能的函数</p>
+<p>　　next:function(){<br>　　　　var fn=this.task.shift();<br>　　　　fn&amp;&amp;fn();<br>　　},</p>
+<p>　　sleep:function(time){<br>　　　　var that=this;<br>　　　　var fn=(function(time){<br>　　　　　　return function(){<br>　　　　　　　　console.log(“sleep…….”+time);<br>　　　　　　　　setTimeout(function(){<br>　　　　　　　　　　that.next();<br>　　　　　　　　},time)<br>　　　　　　}<br>　　　　})(time);<br>　　　　this.task.push(fn);</p>
+<p>　　　　return this;</p>
+<p>//return this是为了实现链式调用<br>　　},</p>
+<p>　　sleepfirst:function(time){<br>　　　　var that=this;<br>　　　　var fn=(function(time){<br>　　　　　　return function(){<br>　　　　　　　　console.log(“sleep…….”+time);<br>　　　　　　　　setTimeout(function(){<br>　　　　　　　　　　that.next();<br>　　　　　　　　　　},time)<br>　　　　　　　　}<br>　　　　　　})(time);<br>　　　　this.task.unshift(fn);<br>　　　　return this;<br>　　},</p>
+<p>　　eat:function(something){<br>　　　　var that=this;<br>　　　　var fn=(function(something){<br>　　　　　　　　return function(){<br>　　　　　　　　console.log(“Eat “+something);<br>　　　　　　　　that.next();<br>　　　　　　　　}<br>　　　　　　})(something)<br>　　　　　　this.task.push(fn);<br>　　　　　　return this;<br>　　　　}<br>　　}<br>LazyMan(“Joe”).sleepfirst(3000).eat(“breakfast”).sleep(1000).eat(“dinner”);</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/19/Article/" data-id="cjnfao7zb00003o2a9aodqndb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog3/public/2018/10/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog3/public/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog3/public/2018/10/19/Article/">Article</a>
+          </li>
+        
+          <li>
+            <a href="/blog3/public/2018/10/18/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog3/public/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog3/public/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog3/public/fancybox/jquery.fancybox.css">
+  <script src="/blog3/public/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog3/public/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
