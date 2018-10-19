@@ -5,18 +5,18 @@
   
 
   
-  <title>Article | Hexo</title>
+  <title>微信前端面试题----js实现LazyMan | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近看到了微信前端的一道面试题,题目是这样的:实现一个LazyMan，可以按照以下方式调用: LazyMan(“Hank”) 输出:12Hi! This is Hank!function func(p1,p2)&amp;#123;&amp;#125; LazyMan(“Hank”).sleep(10).eat(“dinner”)输出Hi! This is Hank!//等待10秒..Wake up after 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Article">
+<meta property="og:title" content="微信前端面试题----js实现LazyMan">
 <meta property="og:url" content="http://yoursite.com/2018/10/19/Article/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近看到了微信前端的一道面试题,题目是这样的:实现一个LazyMan，可以按照以下方式调用: LazyMan(“Hank”) 输出:12Hi! This is Hank!function func(p1,p2)&amp;#123;&amp;#125; LazyMan(“Hank”).sleep(10).eat(“dinner”)输出Hi! This is Hank!//等待10秒..Wake up after 1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-19T01:24:09.646Z">
+<meta property="og:updated_time" content="2018-10-19T02:23:34.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Article">
+<meta name="twitter:title" content="微信前端面试题----js实现LazyMan">
 <meta name="twitter:description" content="最近看到了微信前端的一道面试题,题目是这样的:实现一个LazyMan，可以按照以下方式调用: LazyMan(“Hank”) 输出:12Hi! This is Hank!function func(p1,p2)&amp;#123;&amp;#125; LazyMan(“Hank”).sleep(10).eat(“dinner”)输出Hi! This is Hank!//等待10秒..Wake up after 1">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Article
+      微信前端面试题----js实现LazyMan
     </h1>
   
 
@@ -111,6 +111,7 @@
 <p>//return this是为了实现链式调用<br>　　},</p>
 <p>　　sleepfirst:function(time){<br>　　　　var that=this;<br>　　　　var fn=(function(time){<br>　　　　　　return function(){<br>　　　　　　　　console.log(“sleep…….”+time);<br>　　　　　　　　setTimeout(function(){<br>　　　　　　　　　　that.next();<br>　　　　　　　　　　},time)<br>　　　　　　　　}<br>　　　　　　})(time);<br>　　　　this.task.unshift(fn);<br>　　　　return this;<br>　　},</p>
 <p>　　eat:function(something){<br>　　　　var that=this;<br>　　　　var fn=(function(something){<br>　　　　　　　　return function(){<br>　　　　　　　　console.log(“Eat “+something);<br>　　　　　　　　that.next();<br>　　　　　　　　}<br>　　　　　　})(something)<br>　　　　　　this.task.push(fn);<br>　　　　　　return this;<br>　　　　}<br>　　}<br>LazyMan(“Joe”).sleepfirst(3000).eat(“breakfast”).sleep(1000).eat(“dinner”);</p>
+<p><a href="https://www.cnblogs.com/XieJunBao/p/6367393.html" target="_blank" rel="noopener">本文转载出处</a></p>
 
       
     </div>
@@ -164,7 +165,7 @@
       <ul>
         
           <li>
-            <a href="/2018/10/19/Article/">Article</a>
+            <a href="/2018/10/19/Article/">微信前端面试题----js实现LazyMan</a>
           </li>
         
           <li>

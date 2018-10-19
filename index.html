@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/19/Article/">Article</a>
+      <a class="article-title" href="/2018/10/19/Article/">微信前端面试题----js实现LazyMan</a>
     </h1>
   
 
@@ -109,6 +109,7 @@
 <p>//return this是为了实现链式调用<br>　　},</p>
 <p>　　sleepfirst:function(time){<br>　　　　var that=this;<br>　　　　var fn=(function(time){<br>　　　　　　return function(){<br>　　　　　　　　console.log(“sleep…….”+time);<br>　　　　　　　　setTimeout(function(){<br>　　　　　　　　　　that.next();<br>　　　　　　　　　　},time)<br>　　　　　　　　}<br>　　　　　　})(time);<br>　　　　this.task.unshift(fn);<br>　　　　return this;<br>　　},</p>
 <p>　　eat:function(something){<br>　　　　var that=this;<br>　　　　var fn=(function(something){<br>　　　　　　　　return function(){<br>　　　　　　　　console.log(“Eat “+something);<br>　　　　　　　　that.next();<br>　　　　　　　　}<br>　　　　　　})(something)<br>　　　　　　this.task.push(fn);<br>　　　　　　return this;<br>　　　　}<br>　　}<br>LazyMan(“Joe”).sleepfirst(3000).eat(“breakfast”).sleep(1000).eat(“dinner”);</p>
+<p><a href="https://www.cnblogs.com/XieJunBao/p/6367393.html" target="_blank" rel="noopener">本文转载出处</a></p>
 
       
     </div>
@@ -199,7 +200,7 @@
       <ul>
         
           <li>
-            <a href="/2018/10/19/Article/">Article</a>
+            <a href="/2018/10/19/Article/">微信前端面试题----js实现LazyMan</a>
           </li>
         
           <li>
